@@ -45,6 +45,12 @@
                                 <input type="text" id="txtUsername" name="txtUsername" class="form-control txtField" placeholder="Username">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="txtEmail" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-4">
+                                <input type="text" id="txtEmail" name="txtEmail" class="form-control txtField" placeholder="Email">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
