@@ -1,0 +1,55 @@
+/* 
+    Created on : Mar 30, 2015, 11:00:55 AM
+    Author     : Jeffry Angtoni
+*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body{
+    background: url("../images/bg.png") repeat fixed;
+    z-index: -9999;
+}
+
+.container{
+    border: 1px dashed brown;
+    background: rgba(255,255,255,0.5);
+    padding: 3em 0;
+    z-index: -3;
+}
+
+div#header{
+    border: 1px dashed black;
+    background-color: white;
+    height: auto; /* for testing */
+    z-index: 1;
+}
+
+div#content{
+    border-left: 1px dashed darkorange;
+    border-bottom: 1px dashed darkorange;
+    border-right: 1px dashed darkorange;
+    background-color: white;
+}
+
+.col-md-8{
+    padding:15px;
+}
+
+.h3_title{
+    padding: 0;
+    margin: 0;
+    font-family: 'Rock Salt', cursive;
+}
+
+.h3_title a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.legend_s{
+    font-size: 18px;
+}
