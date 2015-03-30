@@ -3,6 +3,7 @@
     Author     : Jeffry Angtoni
 */
 
+/* General CSS */
 html, body{
     margin: 0;
     padding: 0;
@@ -34,15 +35,30 @@ div#content{
     border-right: 1px dashed darkorange;
     background-color: white;
 }
+/** End General CSS **/
 
+
+/* Extend Core CSS */
 .col-md-8{
     padding:15px;
 }
 
+.form-control:focus{
+    border-color: limegreen;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 12px rgba(19,244,23,.5);
+}
+
+/** End Extend Core CSS **/
+
+
+/* Custom Class */
 .h3_title{
     padding: 0;
     margin: 0;
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    text-shadow: 1px 0 3px rgba(0,0,0,0.5);
 }
 
 .h3_title a{
@@ -53,3 +69,13 @@ div#content{
 .legend_s{
     font-size: 18px;
 }
+
+.txtField{
+    height: 28px;
+    border-radius: 0;
+    padding: 5px;
+    font-weight: 600;
+    color: rgba(224,224,224,0.6);
+}
+
+/** End Custom Class **/
