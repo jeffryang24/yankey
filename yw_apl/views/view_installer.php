@@ -30,13 +30,19 @@
                         <div class="form-group">
                             <label for="txtFirstName" class="col-sm-2 control-label">First Name</label>
                             <div class="col-sm-4">
-                                <input type="text" id="txtFirstName" name="txtFirstName" class="form-control txtField" placeholder="first name">
+                                <input type="text" id="txtFirstName" name="txtFirstName" class="form-control txtField" placeholder="First Name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="txtLastName" class="col-sm-2 control-label">Last Name</label>
                             <div class="col-sm-4">
-                                <input type="text" id="txtLastName" name="txtLastName" class="form-control txtField" placeholder="last name">
+                                <input type="text" id="txtLastName" name="txtLastName" class="form-control txtField" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtUsername" class="col-sm-2 control-label">Username</label>
+                            <div class="col-sm-4">
+                                <input type="text" id="txtUsername" name="txtUsername" class="form-control txtField" placeholder="Username">
                             </div>
                         </div>
                     </form>
