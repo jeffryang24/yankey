@@ -14,6 +14,8 @@ class Installer extends CI_Controller{
     
     // index
     public function index(){
-        
+        // Initialize variable for this page
+        $data = array("installer_page_title" => "Yankee-Whiskey Finance Diary :: First Step ::");
+        $this->load->view("view_installer");
     }
 }
