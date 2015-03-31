@@ -35,21 +35,6 @@ div#header{
     border-right: 1px dashed darkorange;
     background-color: white;
 }
-/**** Code Save for review angular.js animation
-.pageAnimation{
-    transition: ease-in-out 0.5s all;
-    opacity: 1;
-}
-
-.pageAnimation.ng-hide{
-    opacity: 0;
-}
-***/
-
-/*.pageAnimation.ng-hide{
-    opacity: 0;
-}*/
-/** End General CSS **/
 
 /** Extended **/
 .col-md-8{
@@ -145,5 +130,10 @@ div#header{
 
 .fixHelpBlockInMaxMinSpend{
     margin-left: 260px;
+}
+
+.fixHelpPage1{
+    width: 350px;
+    font-size: 12px;
 }
 /** End Custom Class **/
