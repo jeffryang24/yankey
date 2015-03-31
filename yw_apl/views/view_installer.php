@@ -9,12 +9,14 @@
         <link rel="stylesheet" href="<?= base_url().'resources/css/installer.css' ?>">
         <script src="<?= base_url().'resources/js/jquery.min.js' ?>"></script>
         <script src="<?= base_url().'resources/js/angular.min.js' ?>"></script>
+        <script src="<?= base_url().'resources/js/angular-animate.min.js' ?>"></script>
         <script src="<?= base_url().'resources/js/jquery.mask.min.js' ?>"></script>
+        <!-- Internal Script -->
+        <script src="<?= base_url().'resources/js/installer.js' ?>"></script>
         <title><?= $installer_page_title ?></title>
     </head>
-    <body>
+    <body ng-app="instapp" ng-controller="instactrl">
         <div class="container">
-            <!-- begin page 1 -->
             <div class="row">
                 <div class="col-md-8 col-md-offset-2" id="header">
                     <h3 class="h3_title"><a href="<?= base_url() ?>" target="_self">Title</a></h3>
@@ -24,13 +26,14 @@
                 <div class="col-md-8 col-md-offset-2 content">
                     <legend class="legend_s">Setup Progress</legend>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
-                            <b>20%</b>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+                            <b>{{progress}}%</b>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="page-1">
+            <!-- begin page 1 -->
+            <div id="page-1" ng-show="page1">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 content" id="content-1">
                         <legend class="legend_s">Personal User Configuration</legend>
@@ -61,7 +64,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-2 col-sm-offset-5">
-                                    <button class="btn btn-success btn-sm btnPrevNext" id="btnNext-1" name="btnNext-1">Next</button>
+                                    <button class="btn btn-success btn-sm btnPrevNext" id="btnNext-1" name="btnNext-1" ng-click="page1=0;page2=1;">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +74,7 @@
             <!-- end of page 1 -->
             
             <!-- begin page 2 -->
-            <div id="page-2">
+            <div id="page-2" ng-show="page2">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 content" id="content-2">
                         <legend>Password and PIN</legend>
@@ -99,8 +102,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-4">
-                                    <button class="btn btn-danger btn-sm btnPrevNext" id="btnBack-1" name="btnBack-1">Previous</button>
-                                    <button class="btn btn-success btn-sm btnPrevNext" id="btnNext-2" name="btnNext-2">Next</button>
+                                    <button class="btn btn-danger btn-sm btnPrevNext" id="btnBack-1" name="btnBack-1" ng-click="page2=0;page1=1;">Previous</button>
+                                    <button class="btn btn-success btn-sm btnPrevNext" id="btnNext-2" name="btnNext-2" ng-click="page2=0;page3=1;">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +113,7 @@
             <!-- end page 2 -->
             
             <!-- begin page 3 -->
-            <div id="page-3">
+            <div id="page-3" ng-show="page3">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 content" id="content-3">
                         <legend>Database Configuration</legend>
@@ -145,8 +148,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-4">
-                                    <button class="btn btn-danger btn-sm btnPrevNext" id="btnBack-2" name="btnBack-2">Previous</button>
-                                    <button class="btn btn-success btn-sm btnPrevNext" id="btnNext-3" name="btnNext-3">Next</button>
+                                    <button class="btn btn-danger btn-sm btnPrevNext" id="btnBack-2" name="btnBack-2" ng-click="page3=0;page2=1;">Previous</button>
+                                    <button class="btn btn-success btn-sm btnPrevNext" id="btnNext-3" name="btnNext-3" ng-click="page3=0;page4=1;">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +159,7 @@
             <!-- end page 3 -->
             
             <!-- begin page 4 -->
-            <div id="page-4">
+            <div id="page-4" ng-show="page4">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 content" id="content-4">
                         <legend>Basic Finance Setup</legend>
@@ -179,7 +182,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-4">
-                                    <button class="btn btn-danger btn-sm btnPrevNext" id="btnBack-3" name="btnBack-3">Previous</button>
+                                    <button class="btn btn-danger btn-sm btnPrevNext" id="btnBack-3" name="btnBack-3" ng-click="page4=0;page3=1;">Previous</button>
                                     <button class="btn btn-success btn-sm btnEnding" id="btnSubmit" name="btnSubmit">Create</button>
                                 </div>
                             </div>
