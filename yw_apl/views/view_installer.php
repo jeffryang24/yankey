@@ -194,29 +194,29 @@
     </body>
 </html>
 <script>
-    $(document).ready(function(e){
-        // Mask PIN for only six digits
-        $('#txtPIN1').mask('000000');
+$(document).ready(function(e){
+    // Mask PIN for only six digits
+    $('#txtPIN1').mask('000000');
         
-        // Mask Max Spend Field
-        $('#txtMaxSpend,#txtMinSpend').mask('000,000,000,000,000.00',{reverse: true});
+    // Mask Max Spend Field
+    $('#txtMaxSpend,#txtMinSpend').mask('000,000,000,000,000.00',{reverse: true});
         
-        /** Code backup, use method cleanVal to clear the mask **/
-        /*$('#txtMaxSpend').keyup(function(e){
-           console.log($(this).cleanVal()); 
-        });*/
+    /** Code backup, use method cleanVal to clear the mask **/
+    /*$('#txtMaxSpend').keyup(function(e){
+      console.log($(this).cleanVal()); 
+    });*/
         
-        // button show pin toggle action
-        $('#btnShowToggle').on("click",function(e){
-            if($(this).attr('data-toggle') == 0){
-                $('#txtPIN1').attr("type","text");
-                $(this).html("Hide PIN");
-                $(this).attr('data-toggle',1);
-            }else{
-                $('#txtPIN1').attr("type","password");
-                $(this).html("Show PIN")
-                $(this).attr('data-toggle',0);
-            }
-        });
+    // button show pin toggle action
+    $('#btnShowToggle').on("click",function(e){
+        if($(this).attr('data-toggle') == 0){
+            $('#txtPIN1').attr("type","text");
+            $(this).html("Hide PIN");
+            $(this).attr('data-toggle',1);
+        }else{
+            $('#txtPIN1').attr("type","password");
+            $(this).html("Show PIN")
+            $(this).attr('data-toggle',0);
+        }
     });
+});
 </script>
