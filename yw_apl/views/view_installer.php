@@ -25,7 +25,7 @@
             <div id="page-1" ng-show="page1">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 content" id="content-1">
-                        <legend class="legend_s">Personal ser Configuration</legend>
+                        <legend class="legend_s">Personal User Configuration</legend>
                         <div class="form-horizontal">
                             <div class="form-group">
                                 <label for="txtFirstName" class="col-sm-3 control-label">First Name</label>
