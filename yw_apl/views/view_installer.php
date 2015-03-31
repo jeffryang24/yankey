@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="<?= base_url().'resources/css/bootstrap.min.css' ?>">
         <link rel="stylesheet" href="<?= base_url().'resources/css/installer.css' ?>">
         <script src="<?= base_url().'resources/js/jquery.min.js' ?>"></script>
-        <script src="<?= base_url().'resources/js/angular.min.js' ?>"></script>
         <script src="<?= base_url().'resources/js/angular-animate.min.js' ?>"></script>
         <script src="<?= base_url().'resources/js/jquery.mask.min.js' ?>"></script>
         <!-- Internal Script -->
@@ -41,7 +40,7 @@
                             <div class="form-group">
                                 <label for="txtFirstName" class="col-sm-3 control-label">First Name</label>
                                 <div class="col-sm-4">
-                                    <input type="text" id="txtFirstName" name="txtFirstName" class="form-control txtField" placeholder="First Name">
+                                    <input type="text" id="txtFirstName" name="txtFirstName" class="form-control txtField" ng-model="first_name" placeholder="First Name">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -200,12 +199,7 @@ $(document).ready(function(e){
         
     // Mask Max Spend Field
     $('#txtMaxSpend,#txtMinSpend').mask('000,000,000,000,000.00',{reverse: true});
-        
-    /** Code backup, use method cleanVal to clear the mask **/
-    /*$('#txtMaxSpend').keyup(function(e){
-      console.log($(this).cleanVal()); 
-    });*/
-        
+ 
     // button show pin toggle action
     $('#btnShowToggle').on("click",function(e){
         if($(this).attr('data-toggle') == 0){
