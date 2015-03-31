@@ -21,16 +21,6 @@
                     <h3 class="h3_title"><a href="<?= base_url() ?>" target="_self">Title</a></h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 content">
-                    <legend class="legend_s">Setup Progress</legend>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
-                            <b>{{progress}}%</b>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- begin page 1 -->
             <div id="page-1" ng-show="page1">
                 <div class="row">
