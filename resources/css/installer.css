@@ -104,4 +104,32 @@ div#header{
     color: black;
 }
 
+.btnEnding{
+    border-color: #bfd255;
+    background: linear-gradient(to bottom, #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
+    width: 100px;
+}
+
+.btnEnding:hover{
+    border-color: #9ecb2d;
+    background: linear-gradient(to bottom, #9ecb2d 0%,#72aa00 49%,#8eb92a 50%,#bfd255 100%);
+}
+
+.btnPrevNext{
+    width: 100px;
+}
+
+.DBDriverText{
+    height: 28px;
+    line-height: 0.8;
+    margin-bottom: 5px;
+}
+
+.fixPage4Label{
+    width: 32.666667%;
+}
+
+.fixHelpBlockInMaxMinSpend{
+    margin-left: 260px;
+}
 /** End Custom Class **/
