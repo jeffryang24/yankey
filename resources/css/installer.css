@@ -17,7 +17,7 @@ body{
 
 .container{
     border: 1px dashed brown;
-    background: rgba(255,255,255,0.5);
+    background: none;
     padding: 3em 0;
     z-index: -3;
 }
@@ -35,6 +35,20 @@ div#header{
     border-right: 1px dashed darkorange;
     background-color: white;
 }
+/**** Code Save for review angular.js animation
+.pageAnimation{
+    transition: ease-in-out 0.5s all;
+    opacity: 1;
+}
+
+.pageAnimation.ng-hide{
+    opacity: 0;
+}
+***/
+
+/*.pageAnimation.ng-hide{
+    opacity: 0;
+}*/
 /** End General CSS **/
 
 /** Extended **/
