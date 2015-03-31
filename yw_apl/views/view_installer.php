@@ -12,7 +12,7 @@
         <script src="<?= base_url().'resources/js/jquery.mask.min.js' ?>"></script>
         <title><?= $installer_page_title ?></title>
     </head>
-    <body ng-app="instapp" ng-controller="instactrl">
+    <body>
         <div class="container">
             <!-- begin page 1 -->
             <div class="row">
@@ -92,7 +92,9 @@
                                 <label for="pin" class="col-sm-3 control-label">6 Digit PIN</label>
                                 <div class="col-sm-4">
                                     <input type="password" id="txtPIN1" name="txtPIN1" class="form-control txtField" placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;">
-                                    <button class="btn btn-default" id="showToggle" name="showToggle" type="button" ng-click="changeToggle()">{{toggle}}</button>
+                                </div>
+                                <div class="col-sm-2">
+                                    <button class="btn btn-default toggle" id="btnShowToggle" name="btnShowToggle" type="button" data-toggle="0">Show PIN</button>
                                 </div>
                             </div>
                         </div>
@@ -103,21 +105,21 @@
     </body>
 </html>
 <script>
-    var app = angular.module('instapp',[]);
-    app.controller('instactrl',function($scope){
-        $scope.toggle = 'Show PIN';
-        $scope.pinTrigger = 1;
-        $scope.changeToggle = function(){
-            if($scope.pinTrigger){
-                $scope.toggle = 'Show PIN';
-                $scope.pinTrigger = !$scope.pinTrigger;
-            }else{
-                $scope.toggle = 'Hide PIN';
-                $scope.pinTrigger = !$scope.pinTrigger;
-            }
-        }
-    });
     $(document).ready(function(e){
+        // Mask PIN for only six digits
         $('#txtPIN1').mask('000000');
+        
+        // button show pin toggle action
+        $('#btnShowToggle').on("click",function(e){
+            if($(this).attr('data-toggle') == 0){
+                $('#txtPIN1').attr("type","text");
+                $(this).html("Hide PIN");
+                $(this).attr('data-toggle',1);
+            }else{
+                $('#txtPIN1').attr("type","password");
+                $(this).html("Show PIN")
+                $(this).attr('data-toggle',0);
+            }
+        });
     });
 </script>
