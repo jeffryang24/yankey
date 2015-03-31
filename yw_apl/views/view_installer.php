@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="<?= base_url().'resources/css/bootstrap.min.css' ?>">
         <link rel="stylesheet" href="<?= base_url().'resources/css/installer.css' ?>">
         <script src="<?= base_url().'resources/js/jquery.min.js' ?>"></script>
-        <script src="<?= base_url().'resources/js/angular-animate.min.js' ?>"></script>
+        <script src="<?= base_url().'resources/js/angular.min.js' ?>"></script>
         <script src="<?= base_url().'resources/js/jquery.mask.min.js' ?>"></script>
         <!-- Internal Script -->
         <script src="<?= base_url().'resources/js/installer.js' ?>"></script>
@@ -40,19 +40,22 @@
                             <div class="form-group">
                                 <label for="txtFirstName" class="col-sm-3 control-label">First Name</label>
                                 <div class="col-sm-4">
-                                    <input type="text" id="txtFirstName" name="txtFirstName" class="form-control txtField" ng-model="first_name" placeholder="First Name">
+                                    <input type="text" id="txtFirstName" name="txtFirstName" class="form-control txtField" placeholder="First Name">
+                                    <span id="FirstNameHelpBlock" class="help-block fixHelpPage1">Nama depan hanya boleh berupa huruf dan spasi yang berlaku.</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="txtLastName" class="col-sm-3 control-label">Last Name</label>
                                 <div class="col-sm-4">
                                     <input type="text" id="txtLastName" name="txtLastName" class="form-control txtField" placeholder="Last Name">
+                                    <span id="LastNameHelpBlock" class="help-block fixHelpPage1">Nama belakang hanya boleh berupa huruf dan spasi yang berlaku.</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="txtUsername" class="col-sm-3 control-label">Username</label>
                                 <div class="col-sm-4">
                                     <input type="text" id="txtUsername" name="txtUsername" class="form-control txtField" placeholder="Username">
+                                    <span id="UsernameHelpBlock" class="help-block fixHelpPage1">Username minimal 5 karakter dan maksimun 8 karakter.</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -194,6 +197,17 @@
 </html>
 <script>
 $(document).ready(function(e){
+    // initialization
+    $('#btnNext-1').attr("disabled",true);
+    $('#btnNext-2').attr("disabled",true);
+    $('#btnNext-3').attr("disabled",true);
+    
+    var fname,lname,username,email = 0;
+    // regex
+    var firstname_gex = /^[A-Za-z]{3,25}$/;
+    var lastname_gex = /^[A-Za-z]{3,25}$/;
+    var username_gex = /^[A-Za-z0-9-_]{5,8}$/;
+    
     // Mask PIN for only six digits
     $('#txtPIN1').mask('000000');
         
@@ -211,6 +225,12 @@ $(document).ready(function(e){
             $(this).html("Show PIN")
             $(this).attr('data-toggle',0);
         }
+    });
+    
+    /* First Page Validation */
+    $('#txtFirstName').on("keyup",function(e){
+       if(firstname_gex.test($(this).val())) fname = 1; else fname = 0;
+       console.log(fname);
     });
 });
 </script>
