@@ -3,9 +3,7 @@
     Author     : Jeffry Angtoni
     Purpose    : Standard Style for Yankey Finance
 */
-.col-md-8{
-    padding:15px;
-}
+
 
 .form-control:focus{
     border: none;
