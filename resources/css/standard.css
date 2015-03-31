@@ -22,3 +22,6 @@
     background: linear-gradient(to bottom, #fefefe 0%,#fefefe 0%,#dbdbdb 50%,#d1d1d1 51%,#e2e2e2 100%);
 }
 
+.btn-danger:disabled, .btn-success:disabled{
+    border-color: gainsboro;
+}
