@@ -10,8 +10,9 @@
         <script src="<?= base_url().'resources/js/jquery.min.js' ?>"></script>
         <script src="<?= base_url().'resources/js/angular.min.js' ?>"></script>
         <script src="<?= base_url().'resources/js/jquery.mask.min.js' ?>"></script>
-        <!-- Internal Script -->
+        <!-- External Local Script -->
         <script src="<?= base_url().'resources/js/installer.js' ?>"></script>
+        <script src="<?= base_url().'resources/js/installerjq.js' ?>"></script>
         <title><?= $installer_page_title ?></title>
     </head>
     <body ng-app="instapp" ng-controller="instactrl">
@@ -45,7 +46,7 @@
                                 <label for="txtUsername" class="col-sm-3 control-label">Username</label>
                                 <div class="col-sm-4">
                                     <input type="text" id="txtUsername" name="txtUsername" class="form-control txtField" placeholder="Username">
-                                    <span id="UsernameHelpBlock" class="help-block fixHelpPage1">Username minimal 5 karakter dan maksimun 8 karakter.</span>
+                                    <span id="UsernameHelpBlock" class="help-block fixHelpPage1">Username minimal 5 karakter dan maksimun 10 karakter. <b>(Tanpa spasi)</b></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -185,42 +186,3 @@
         </div>
     </body>
 </html>
-<script>
-$(document).ready(function(e){
-    // initialization
-    $('#btnNext-1').attr("disabled",true);
-    $('#btnNext-2').attr("disabled",true);
-    $('#btnNext-3').attr("disabled",true);
-    
-    var fname,lname,username,email = 0;
-    // regex
-    var firstname_gex = /^[A-Za-z]{3,25}$/;
-    var lastname_gex = /^[A-Za-z]{3,25}$/;
-    var username_gex = /^[A-Za-z0-9-_]{5,8}$/;
-    
-    // Mask PIN for only six digits
-    $('#txtPIN1').mask('000000');
-        
-    // Mask Max Spend Field
-    $('#txtMaxSpend,#txtMinSpend').mask('000,000,000,000,000.00',{reverse: true});
- 
-    // button show pin toggle action
-    $('#btnShowToggle').on("click",function(e){
-        if($(this).attr('data-toggle') == 0){
-            $('#txtPIN1').attr("type","text");
-            $(this).html("Hide PIN");
-            $(this).attr('data-toggle',1);
-        }else{
-            $('#txtPIN1').attr("type","password");
-            $(this).html("Show PIN")
-            $(this).attr('data-toggle',0);
-        }
-    });
-    
-    /* First Page Validation */
-    $('#txtFirstName').on("keyup",function(e){
-       if(firstname_gex.test($(this).val())) fname = 1; else fname = 0;
-       console.log(fname);
-    });
-});
-</script>
