@@ -87,7 +87,7 @@
                             <div class="form-group">
                                 <label for="pin" class="col-sm-3 control-label">6 Digit PIN</label>
                                 <div class="col-sm-4">
-                                    <input type="password" id="txtPIN1" name="txtPIN1" class="form-control txtField" placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;">
+                                    <input type="password" id="txtPIN" name="txtPIN" class="form-control txtField" placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;">
                                 </div>
                                 <div class="col-sm-2">
                                     <button class="btn btn-default toggle" id="btnShowToggle" name="btnShowToggle" type="button" data-toggle="0">Show PIN</button>
