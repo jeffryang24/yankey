@@ -6,12 +6,18 @@ $(document).ready(function(e){
     $('#btnNext-1').attr("disabled",true);
     $('#btnNext-2').attr("disabled",true);
     $('#btnNext-3').attr("disabled",true);
+    $('#btnSubmit').attr("disabled",true);
     
     var fname,lname,username,email = 0;
     var pass1, pass2, pin = 0;
+    var dbuser, dbname = 0;
+    var dbpass = 1;     // db pass can be blank like mysql
+    var minspend, maxspend = 0;
+    
     // regex
     var firstlastname_gex = /^[A-Za-z]{3,25}$/;
     var username_gex = /^[A-Za-z0-9\-_]{5,10}$/;
+    var dbuser_gex = /^[A-Za-z0-9\-_]{4,10}$/;
     var email_gex = /^[A-Za-z0-9_\-\+\.]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-\.]+$/;
     var pass_gex = /^[A-Za-z0-9_\-\.\!\@\#\$]{6,15}$/;
     
@@ -76,6 +82,28 @@ $(document).ready(function(e){
         console.log(pass1 + "\\" + pass2 + "\\" + pin);
     });
     
+    /* Third Page Validation */
+    $('#txtDbUser,#txtDbPass,#txtDbName').on("keyup",function(e){
+        var db_user = $('#txtDbUser').val();
+        var db_name = $('#txtDbName').val();
+        
+        if(dbuser_gex.test(db_user)) dbuser = 1; else dbuser = 0;
+        if(db_name.length == 0 || db_name == null) dbname = 0; else dbname = 1;
+        checkValidPage(3);
+        console.log(dbuser + "-" + dbpass + "-" + dbname);
+    });
+    
+    /* Last Page Validation */
+    $('#txtMinSpend,#txtMaxSpend').on("keyup",function(e){
+       var min_spend = $('#txtMinSpend').val();
+       var max_spend = $('#txtMaxSpend').val();
+       
+       if(min_spend == null || min_spend.length == 0) minspend = 0; else minspend = 1;
+       if(max_spend == null || max_spend.length == 0) maxspend = 0; else maxspend = 1;
+       checkValidPage(4);
+       console.log(minspend + "{}" + maxspend);
+    });
+    
     /* Next Button Validation */
     // page 1
     function checkValidPage(page){
@@ -91,6 +119,24 @@ $(document).ready(function(e){
             }else{
                 $('#btnNext-'+page).attr("disabled",true);
             }
+        }else if(page == 3){
+            if(dbuser && dbname && dbpass){
+                $('#btnNext-'+page).removeAttr("disabled");
+            }else{
+                $('#btnNext-'+page).attr("disabled",true);
+            }
+        }else if(page == 4){
+            if(minspend && maxspend){
+                $('#btnSubmit').removeAttr("disabled");
+            }else{
+                $('#btnSubmit').attr("disabled",true);
+            }
         }
     }
+    
+    
+    /** Submit Button Action **/
+    $('#btnSubmit').on("click",function(e){
+       
+    });
 });
