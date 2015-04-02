@@ -6,6 +6,6 @@
 var app = angular.module('instapp',[]);
 app.controller('instactrl',function($scope){
     // page1 default is 1 because it's the first page to show
-    $scope.page1 = 1;
-    $scope.page2 = $scope.page3 = $scope.page4 = 0;
+    $scope.page3 = 1;
+    $scope.page2 = $scope.page1 = $scope.page4 = 0;
 });
