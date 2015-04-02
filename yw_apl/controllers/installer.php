@@ -18,4 +18,8 @@ class Installer extends CI_Controller{
         $data = array("installer_page_title" => "Yankee-Whiskey Finance Diary :: First Step ::");
         $this->load->view("view_installer",$data);
     }
+    
+    public function init(){
+        
+    }
 }
