@@ -53,6 +53,7 @@
                                 <label for="txtEmail" class="col-sm-3 control-label">Email</label>
                                 <div class="col-sm-4">
                                     <input type="text" id="txtEmail" name="txtEmail" class="form-control txtField" placeholder="Email">
+                                    <span id="EmailHelpBlock" class="help-block fixHelpPage1">Masukkan alamat email yang valid.</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -121,7 +122,7 @@
                             <div class="form-group">
                                 <label for="txtDbPass" class="col-sm-3 control-label">Password</label>
                                 <div class="col-sm-4">
-                                    <input type="password" id="txtPass2" name="txtPass2" class="form-control txtField" placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;">
+                                    <input type="password" id="txtDbPass" name="txtDbPass" class="form-control txtField" placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;">
                                     <span id="DbPassHelpBlock" class="help-block">Default password is blank.</span>
                                 </div>
                             </div>
@@ -178,11 +179,13 @@
                                     <button class="btn btn-danger btn-sm btnPrevNext" id="btnBack-3" name="btnBack-3" ng-click="page4=0;page3=1;">Previous</button>
                                     <button class="btn btn-success btn-sm btnEnding" id="btnSubmit" name="btnSubmit">Create</button>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div id="modal" class="j3modal hidden"><div class="j3modal-content"><img src="<?= base_url().'resources/images/loader.gif' ?>" width="32" height="32" alt="loader"></div></div>
     </body>
 </html>
