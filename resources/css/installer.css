@@ -136,4 +136,26 @@ div#header{
     width: 400px;
     font-size: 12px;
 }
+
+/** Modal **/
+.j3modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.68);
+    z-index: 99999;
+    transition: opacity 400ms ease-in;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+}
+
+.j3modal-content{
+    text-align: center;
+    margin-top: 280px;
+}
+
+
+
 /** End Custom Class **/
