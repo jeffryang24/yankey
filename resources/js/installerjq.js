@@ -148,6 +148,7 @@ $(document).ready(function(e){
     
     /** Submit Button Action **/
     $('#btnSubmit').on("click",function(e){
-       
+       $('#modal').fadeIn(300);
+       // do ajax thing here
     });
 });
