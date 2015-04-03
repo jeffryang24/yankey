@@ -130,7 +130,7 @@
                                 <label for="txtDbUser" class="col-sm-3 control-label">Database Name</label>
                                 <div class="col-sm-4">
                                     <input type="text" id="txtDbName" name="txtDbName" class="form-control txtField" placeholder="Database Name">
-                                    <span id="DbNameHelpBlock" class="help-block">If there is no database created in your server, we will create it for you.</span>
+                                    <span id="DbNameHelpBlock" class="help-block">Database name that has been created.</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -186,6 +186,11 @@
             </div>
         </div>
         <!-- Modal -->
-        <div id="modal" class="j3modal hidden"><div class="j3modal-content"><img src="<?= base_url().'resources/images/loader.gif' ?>" width="32" height="32" alt="loader"></div></div>
+        <div id="modal" class="j3modal">
+            <div class="j3modal-content">
+                <img src="<?= base_url().'resources/images/loader.gif' ?>" width="32" height="32" alt="loader">
+                <div id="msg_info">Please Wait</div>
+            </div>
+        </div>
     </body>
 </html>
