@@ -20,6 +20,11 @@ class Installer extends CI_Controller{
     }
     
     public function init(){
+        /*
+         * @author      : Jeffry Angtoni
+         * @date added  : April 3, 2015
+         * @purpose     : handle registering new client
+         */
         
     }
 }
