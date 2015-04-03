@@ -57,19 +57,30 @@ $(document).ready(function(e){
         var unique = $('#txtPIN').val();
         
         // Fix password validation bug, April 2, 2015
-        if(pass_1.length < 6 || pass_2.length < 6){
-            pass1 = pass2 = 0;
+        if(pass_1.length < 6){
+            pass1 = 0;
+            if(pass_2.length < 6){
+                pass2 = 0;
+            }
         }else{
             if(pass_1.length != pass_2.length){
                 pass1 = pass2 = 0;
             }else{
                 if(pass_gex.test(pass_1)){
-                    pass1 = 1;
+                    if(pass_1 != pass_2){
+                        pass1 = 0;
+                    }else{
+                        pass1 = 1;
+                    }
                 }else{
                     pass1 = 0;
                 }
                 if(pass_gex.test(pass_2)){
-                    pass2 = 1;
+                    if(pass_2 != pass_1){
+                        pass2 = 0;
+                    }else{
+                        pass2 = 1;
+                    }
                 }else{
                     pass2 = 0;
                 }
